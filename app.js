@@ -34,12 +34,6 @@ server.listen(3000,function(){
     console.log("Server is running on port 3000 now");
 })
 
-function users(){
-     res.end("You have requested posts");
- }
-function post(){
-     res.end("You have requested posts");
- }
 
 // const myModule = require('./myModule');
 // myModule.sayHello();
