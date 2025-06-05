@@ -3,6 +3,9 @@ const stringDecoder = require('string_decoder').StringDecoder;
 
 const app = express()
 const port = 3000
+
+//To read data from request bofy
+app.use(express.json());
 // const port2 = 3005
 
 app.get('/', (req, res) => {
@@ -25,17 +28,17 @@ app.post('/users', (req, res) => {
     res.send('user created!')
     console.log(req.body);
 
-    const decoder = new stringDecoder('utf8');
-    let buffer='';
+    // const decoder = new stringDecoder('utf8');
+    // let buffer='';
 
-    req.on('data',function(data){
-        buffer += decoder.write(data)
-    })
-    req.on('end',function(){
-        buffer += decoder.end()
-        // res.end("hello Bye")
-        console.log(buffer);
-    })
+    // req.on('data',function(data){
+    //     buffer += decoder.write(data)
+    // })
+    // req.on('end',function(){
+    //     buffer += decoder.end()
+    //     // res.end("hello Bye")
+    //     console.log(buffer);
+    // })
 
   })
 
