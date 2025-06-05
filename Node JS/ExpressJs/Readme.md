@@ -1,5 +1,5 @@
 //Node JS FRAMEWORKS
-//express.js, nestjs, fastify, AdonisJs, molecular
+//express.js, nestjs, fastify, AdonisJs, Moleculer
 
 //npm init -y
 //npm install express --save
