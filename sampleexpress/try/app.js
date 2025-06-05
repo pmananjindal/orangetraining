@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3004
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
+    console.log(req.body);
   res.send('Hello World!')
 })
 app.get('/users', (req, res) => {
