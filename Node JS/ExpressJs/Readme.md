@@ -12,4 +12,4 @@
 //npm install morgan
 
 //npm install pino //dependancy
-//npm install pino --save-dev //development dependancy 
+//npm install pino-pretty --save-dev //development dependancy 
