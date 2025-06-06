@@ -3,5 +3,13 @@
 
 //npm init -y
 //npm install express --save
-//npm install typescript --save-dev
-//npm install nodemon --save-dev
+//npm install typescript --save-dev ////development dependancy
+//npm install nodemon --save-dev ////development dependancy
+
+//to do debugging, logging application
+//Morgan, Winston, pino
+
+//npm install morgan
+
+//npm install pino //dependancy
+//npm install pino --save-dev //development dependancy 
