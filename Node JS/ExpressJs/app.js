@@ -29,6 +29,11 @@ app.get('/middleware', (req, res) => {
   res.send(`middleware page ${req.requestDate} ${req.name} ${res.value} ${req.myurl}`)
   //pino logger middleware
   pinologger.info(req.requestDate);
+  pinologger.error(req.name); //get method
+  pinologger.warn('This is a warning message');
+  pinologger.fatal('This is a fatal message');
+  //  pinologger.debug('This is a debug message');
+  //   pinologger.trace('This is a trace message');
 })
 
 app.get('/test', (req, res) => {
