@@ -1,23 +1,34 @@
 const express = require('express')
-const stringDecoder = require('string_decoder').StringDecoder;
 const dateMiddleware = require('./requestDateMiddleware');
 const morgan = require('morgan');
+const pinologger = require('./pinoMiddleware');
+const path = require('path')
 
 const app = express()
 const port = 3000
 
-//To read data from request bofy
+//To read data from request body
 app.use(express.json());
+// morgan middleware - Logging
 app.use(morgan(':method :url :status - :response-time ms')); //morgan('dev'),morgan('combined'),morgan('tiny'), morgan(':method :url :status - :response-time ms')
+//custom middleware
 app.use(dateMiddleware);
+// static file serving middleware
+app.use(express.static(path.join(__dirname, 'public')));
 
 // const port2 = 3005
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/hi',(req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'index1.html'));
+})
+
 app.get('/middleware', (req, res) => {
   res.send(`middleware page ${req.requestDate} ${req.name} ${res.value} ${req.myurl}`)
+  //pino logger middleware
+  pinologger.info(req.requestDate);
 })
 
 app.get('/test', (req, res) => {
