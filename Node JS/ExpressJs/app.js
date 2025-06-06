@@ -1,16 +1,19 @@
 const express = require('express')
 const stringDecoder = require('string_decoder').StringDecoder;
+const dateMiddleware = require('./requestDateMiddleware');
 
 const app = express()
 const port = 3000
 
 //To read data from request bofy
 app.use(express.json());
-// const port2 = 3005
+app.use(dateMiddleware);
 
+// const port2 = 3005
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
 
 app.get('/test', (req, res) => {
   res.send('Hello Tests!!!')
@@ -39,8 +42,14 @@ app.post('/users', (req, res) => {
   })
 
 app.get('/users', (req, res) => {
-  res.json(userData);
+   res.json(userData);
 })
+
+
+app.get('/middleware', (req, res) => {
+  res.send(`middleware page ${req.requestDate} ${req.name} ${res.value} ${req.myurl}`)
+})
+
 
 app.put('/users/:userId/:address', (req, res) => {
   var userId = req.params.userId;
