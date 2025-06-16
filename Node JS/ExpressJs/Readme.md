@@ -13,3 +13,7 @@
 
 //npm install pino //dependancy
 //npm install pino-pretty --save-dev //development dependancy 
+
+ORM FRAMEWORKS
+//lucid,mongoose
+//npm install mongoose

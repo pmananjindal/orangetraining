@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3003;
 
+const mongooseDb = require('./db');
+mongooseDb();
+
 const usersRouter = require('./userRoutes');
 const paymentRouter = require('./paymentRoutes');
 
