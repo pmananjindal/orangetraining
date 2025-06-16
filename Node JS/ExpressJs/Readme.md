@@ -17,3 +17,5 @@
 ORM FRAMEWORKS
 //lucid,mongoose
 //npm install mongoose
+
+//npm install dotenv

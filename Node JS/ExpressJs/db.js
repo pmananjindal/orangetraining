@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const { convertCompilerOptionsFromJson } = require("typescript");
-require('dotenv').config()
+
+//import .env variables 
+require('dotenv').config();
 
 async function connectDb()
 {
-    const dbconnstr = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_SERVER}/`;
-    console.log(dbconnstr);
+    const MONGODB_CONNSTR = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_SERVER}/`;
     try{
-        await mongoose.connect(dbconnstr,{
+        await mongoose.connect(MONGODB_CONNSTR,{
             useNewUrlParser:true,
             useUnifiedTopology:true
         });
