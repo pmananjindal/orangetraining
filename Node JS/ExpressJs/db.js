@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 
-//import .env variables 
-require('dotenv').config();
-
 async function connectDb()
 {
     const MONGODB_CONNSTR = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_SERVER}/`;

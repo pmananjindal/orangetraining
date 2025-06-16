@@ -1,6 +1,9 @@
 const express = require("express");
+//import .env variables 
+require('dotenv').config();
+
 const app = express();
-const port = 3003;
+const port = process.env.APP_PORT;
 
 //import & connect to mongodb
 const mongooseDb = require('./db');
@@ -13,5 +16,5 @@ app.use("/users",usersRouter);
 app.use("/payments",paymentRouter);
 
 app.listen(port, ()=>{
-    console.log(`Server is runnig on port ${port}`);
+    console.log(`Server is running on port ${port}`);
 });
