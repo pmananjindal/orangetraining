@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3003;
 
+//import & connect to mongodb
 const mongooseDb = require('./db');
 mongooseDb();
 
