@@ -49,7 +49,7 @@ try
 });
 
 router.post('/',(req,res)=>{
-console.log(req.body);
+// console.log(req.body);
 
 let newPayment = new Payments({
 description : req.body.description,

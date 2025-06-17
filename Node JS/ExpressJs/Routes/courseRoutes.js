@@ -50,7 +50,7 @@ res.status(500).send({ error: err.message });
 });
 
 router.post("/", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     // Insert the data into DB using Schema
     let newCourse = new Course({
         courseName: req.body.courseName,
