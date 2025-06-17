@@ -1,7 +1,7 @@
 //import .env variables 
 require('dotenv').config();
 //import & connect to mongodb
-const mongooseDb = require('./db');
+const mongooseDb = require('./DBConnectivity/db');
 mongooseDb();
 
 // const Course = require('./Schemas/CourseSchema');
