@@ -20,19 +20,19 @@
     //console.log(`Example app listening on port ${port}`)
 //})
 
-const express = require('express')
-const app = express()
-const path = require('path');
-const port = 3003
+// const express = require('express')
+// const app = express()
+// const path = require('path');
+// const port = 3003
 
-app.listen(port,()=>{
-    console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port,()=>{
+//     console.log(`Example app listening on port ${port}`)
+// })
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/hi',(req,res)=>{
-res.sendFile(path.join(__dirname, 'public', 'ind1.html'));
-})
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.get('/hi',(req,res)=>{
+// res.sendFile(path.join(__dirname, 'public', 'ind1.html'));
+// })
 // const middleware = require('./datemiddleware.js');
 // //const morgan = require("morgan");
 // const logger = require('./pinomiddlware.js');
@@ -77,3 +77,28 @@ res.sendFile(path.join(__dirname, 'public', 'ind1.html'));
 //app.post('/posts',(req,res)=>{
   //  res.send('Hello worled user1');
 //})
+
+
+// const connectDB = require('./db');
+// connectDB();
+// const express = require('express')
+// const app = express()
+// app.listen(3000,function(){
+// console.log("Server is running on port 3000 now");
+// })
+
+
+const connectDB = require('./db');
+connectDB();
+const Course = require('./courseschema.js');
+const Payment = require('./paymentschema.js');
+ const courseRoutes = require('./courseRoutes.js');
+const paymentRoutes = require('./paymentRoutes.js');
+const express = require('express')
+const app = express()
+app.use(express.json());
+app.use('/course', courseRoutes);
+app.use('/payment', paymentRoutes);
+app.listen(3000,function(){
+    console.log("Server is running on port 3000 now");
+})
