@@ -19,3 +19,5 @@ ORM FRAMEWORKS
 //npm install mongoose
 
 //npm install dotenv
+
+//https://mongoosejs.com/docs/index.html
