@@ -7,7 +7,6 @@ const userdetails = require("../Models/userloginSchema");
 
 router.post("/userdetails", async (req, res) => {
     console.log(req.body);
-    // Insert the data into DB using Schema
     const hashedPassword = await bcrypt.hash( req.body.password, 10);
     let newuserdetails = new userdetails({
         username: req.body.username,
