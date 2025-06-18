@@ -90,15 +90,18 @@
 
 const connectDB = require('./db');
 connectDB();
-const Course = require('./courseschema.js');
-const Payment = require('./paymentschema.js');
- const courseRoutes = require('./courseRoutes.js');
-const paymentRoutes = require('./paymentRoutes.js');
+const Course = require('./Models/courseschema.js');
+const Payment = require('./Models/paymentschema.js');
+const Userlogin = require('./Models/userloginSchema.js');
+const courseRoutes = require('./Routes/courseRoutes.js');
+const paymentRoutes = require('./Routes/paymentRoutes.js');
+const userloginRoutes = require('./Routes/userloginRoutes.js');
 const express = require('express')
 const app = express()
 app.use(express.json());
 app.use('/course', courseRoutes);
 app.use('/payment', paymentRoutes);
+app.use('/user', userloginRoutes);
 app.listen(3000,function(){
     console.log("Server is running on port 3000 now");
 })
