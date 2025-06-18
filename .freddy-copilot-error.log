@@ -1,0 +1,91 @@
+
+      --------------------------------------
+      Error Stack:: "AxiosError: Request failed with status code 401\n\tat De (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:182972)\n\tat IncomingMessage.<anonymous> (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:194842)\n\tat IncomingMessage.emit (node:events:536:35)\n\tat endReadableNT (node:internal/streams/readable:1698:12)\n\tat process.processTicksAndRejections (node:internal/process/task_queues:82:21)"
+      Error Message:: "Request failed with status code 401"
+      Error Name:: "AxiosError"
+      Request ID:: 19ba966a-c166-457f-896e-f43c2a6ac680
+      
+      Env:: release
+      API Route:: /api/v1/copilot/migration_scope
+      API Response Message:: Invalid token
+      API Response Error Type:: unauthorized
+
+      Timestamp:: Sat, 07 Jun 2025 20:03:51 GMT
+      Extension Version:: 2.4.0
+      --------------------------------------
+    
+      --------------------------------------
+      Error Stack:: "Error: Please set up the FDK path to proceed, you can set up the path from settings.\n\tat t.FdkHelper.getfdkPathFromConfig (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:90217)\n\tat t.FdkHelper.runInBackground (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:91664)\n\tat t.FdkHelper.getFdkVersion (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:87367)\n\tat f.getFdkVersion (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:154837)\n\tat f.resolveWebviewView (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:131889)\n\tat process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n\tat async pG.$resolveWebviewView (file:///c:/Users/SMPG4239/OneDrive%20-%20orange.com/Desktop/node/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:170:24593)"
+      Error Message:: "Please set up the FDK path to proceed, you can set up the path from settings."
+      Error Name:: "Error"
+      
+      
+      
+      
+      
+      
+
+      Timestamp:: Sat, 07 Jun 2025 20:03:51 GMT
+      Extension Version:: 2.4.0
+      --------------------------------------
+    
+      --------------------------------------
+      Error Stack:: "AxiosError: Request failed with status code 401\n\tat De (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:182972)\n\tat x.<anonymous> (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:194186)\n\tat x.emit (node:events:536:35)\n\tat x._processResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:49588)\n\tat ClientRequest._onNativeResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:44660)\n\tat Object.onceWrapper (node:events:639:26)\n\tat ClientRequest.emit (node:events:536:35)\n\tat HTTPParser.parserOnIncomingClient (node:_http_client:702:27)\n\tat HTTPParser.parserOnHeadersComplete (node:_http_common:118:17)\n\tat TLSSocket.socketOnData (node:_http_client:544:22)\n\tat TLSSocket.emit (node:events:524:28)\n\tat addChunk (node:internal/streams/readable:561:12)\n\tat readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n\tat Readable.push (node:internal/streams/readable:392:5)\n\tat TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23)"
+      Error Message:: "Request failed with status code 401"
+      Error Name:: "AxiosError"
+      Request ID:: 1069f18a-8f1f-46e8-9d32-807ae0d4f434
+      
+      Env:: release
+      API Route:: /api/v1/copilot/completions/platform/3
+      
+      
+
+      Timestamp:: Sat, 07 Jun 2025 20:04:05 GMT
+      Extension Version:: 2.4.0
+      --------------------------------------
+    
+      --------------------------------------
+      Error Stack:: "AxiosError: Request failed with status code 401\n\tat De (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:182972)\n\tat x.<anonymous> (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:194186)\n\tat x.emit (node:events:536:35)\n\tat x._processResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:49588)\n\tat ClientRequest._onNativeResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:44660)\n\tat Object.onceWrapper (node:events:639:26)\n\tat ClientRequest.emit (node:events:536:35)\n\tat HTTPParser.parserOnIncomingClient (node:_http_client:702:27)\n\tat HTTPParser.parserOnHeadersComplete (node:_http_common:118:17)\n\tat TLSSocket.socketOnData (node:_http_client:544:22)\n\tat TLSSocket.emit (node:events:524:28)\n\tat addChunk (node:internal/streams/readable:561:12)\n\tat readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n\tat Readable.push (node:internal/streams/readable:392:5)\n\tat TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23)"
+      Error Message:: "Request failed with status code 401"
+      Error Name:: "AxiosError"
+      Request ID:: 1069f18a-8f1f-46e8-9d32-807ae0d4f434
+      
+      Env:: release
+      API Route:: /api/v1/copilot/completions/platform/3
+      
+      
+
+      Timestamp:: Sat, 07 Jun 2025 20:04:05 GMT
+      Extension Version:: 2.4.0
+      --------------------------------------
+    
+      --------------------------------------
+      Error Stack:: "AxiosError: Request failed with status code 401\n\tat De (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:182972)\n\tat x.<anonymous> (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:194186)\n\tat x.emit (node:events:536:35)\n\tat x._processResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:49588)\n\tat ClientRequest._onNativeResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:44660)\n\tat Object.onceWrapper (node:events:639:26)\n\tat ClientRequest.emit (node:events:536:35)\n\tat HTTPParser.parserOnIncomingClient (node:_http_client:702:27)\n\tat HTTPParser.parserOnHeadersComplete (node:_http_common:118:17)\n\tat TLSSocket.socketOnData (node:_http_client:544:22)\n\tat TLSSocket.emit (node:events:524:28)\n\tat addChunk (node:internal/streams/readable:561:12)\n\tat readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n\tat Readable.push (node:internal/streams/readable:392:5)\n\tat TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23)"
+      Error Message:: "Request failed with status code 401"
+      Error Name:: "AxiosError"
+      Request ID:: 49edb3e1-4f13-4965-a1d2-e892c0741c37
+      
+      Env:: release
+      API Route:: /api/v1/copilot/completions/platform/3
+      
+      
+
+      Timestamp:: Sat, 07 Jun 2025 20:05:37 GMT
+      Extension Version:: 2.4.0
+      --------------------------------------
+    
+      --------------------------------------
+      Error Stack:: "AxiosError: Request failed with status code 401\n\tat De (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:182972)\n\tat x.<anonymous> (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:194186)\n\tat x.emit (node:events:536:35)\n\tat x._processResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:49588)\n\tat ClientRequest._onNativeResponse (c:\\Users\\SMPG4239\\.vscode\\extensions\\freshworksmarketplace.freddy-copilot-2.4.0\\dist\\extension.js:2:44660)\n\tat Object.onceWrapper (node:events:639:26)\n\tat ClientRequest.emit (node:events:536:35)\n\tat HTTPParser.parserOnIncomingClient (node:_http_client:702:27)\n\tat HTTPParser.parserOnHeadersComplete (node:_http_common:118:17)\n\tat TLSSocket.socketOnData (node:_http_client:544:22)\n\tat TLSSocket.emit (node:events:524:28)\n\tat addChunk (node:internal/streams/readable:561:12)\n\tat readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n\tat Readable.push (node:internal/streams/readable:392:5)\n\tat TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23)"
+      Error Message:: "Request failed with status code 401"
+      Error Name:: "AxiosError"
+      Request ID:: 49edb3e1-4f13-4965-a1d2-e892c0741c37
+      
+      Env:: release
+      API Route:: /api/v1/copilot/completions/platform/3
+      
+      
+
+      Timestamp:: Sat, 07 Jun 2025 20:05:37 GMT
+      Extension Version:: 2.4.0
+      --------------------------------------
+    
