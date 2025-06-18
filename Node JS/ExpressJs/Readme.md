@@ -21,3 +21,7 @@ ORM FRAMEWORKS
 //npm install dotenv
 
 //https://mongoosejs.com/docs/index.html
+
+//npm install jsonwebtoken
+
+//npm install bcrypt

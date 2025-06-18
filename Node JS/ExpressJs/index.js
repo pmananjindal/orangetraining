@@ -9,14 +9,18 @@ mongooseDb();
 const usersRouter = require('./Routes/userRoutes');
 const paymentRouter = require('./Routes/paymentRoutes');
 const courseRouter = require('./Routes/courseRoutes');
+
 const express = require("express");
 const app = express();
 const port = process.env.APP_PORT;
+const authTokenMiddleware = require('./Middleware/authenticateTokenMiddleware');
 
 app.use(express.json());
 app.use("/users",usersRouter);
+app.use(authTokenMiddleware);
 app.use("/payments",paymentRouter);
 app.use("/course",courseRouter);
+
 
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`);

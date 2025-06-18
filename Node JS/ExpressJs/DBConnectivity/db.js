@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const pinologger = require('../Middleware/pinoMiddleware');
 
 async function connectDb()
 {
@@ -8,10 +9,10 @@ async function connectDb()
             useNewUrlParser:true,
             useUnifiedTopology:true
         });
-        console.log("✅ Mongodb connected successfully !!!")
+        pinologger.info("✅ Mongodb connected successfully !!!")
     }
     catch(err){
-        console.error('❌ MongoDB Connection Error:', err);
+        pinologger.error('❌ MongoDB Connection Error:', err);
         process.exit(1);
     }
 }

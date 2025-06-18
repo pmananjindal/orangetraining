@@ -1,6 +1,7 @@
 const express = require("express");
 const Course = require("../Schemas/CourseSchema");
 const router = express.Router();
+const pinologger = require('../Middleware/pinoMiddleware');
 
 
 router.get("/", async (req, res) => {
@@ -8,7 +9,7 @@ router.get("/", async (req, res) => {
         const courses = await Course.find({});
         res.status(200).send(courses);
       } catch (err) {
-        console.error('Error fetching courses:', err);
+        pinologger.error('Error fetching courses:', err);
         res.status(500).send({ error: 'Failed to fetch courses' });
       }
 });
@@ -21,7 +22,7 @@ router.get('/:id', async (req, res) => {
       }
       res.status(200).send(course);
     } catch (err) {
-      console.error('Error fetching course:', err);
+      pinologger.error('Error fetching course:', err);
       res.status(500).send({ error: 'Failed to fetch course' });
     }
 });
@@ -61,7 +62,7 @@ router.post("/", (req, res) => {
     newCourse.save().then((result) => {
         res.send(result);
     }).catch((err) => {
-        console.error(err);
+        pinologger.error('Error creating course:', err);
         res.status(500).send({ error: 'Failed to create course' });
     });
 });
