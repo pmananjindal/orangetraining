@@ -4,20 +4,19 @@ const bcrypt = require('bcryptjs');
 require('dotenv').config();
 const router = express.Router();
 const User = require("./userSchema");
-// const middleware = require('./middleware');
-// middleware.authenticateToken();
+const middle = require('./middleware');
 
-//Middleware to protect routes
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader?.split(' ')[1];
-  if (!token) return res.sendStatus(401);
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403);
+// Middleware to protect routes
+// function authenticateToken(req, res, next) {
+  // const authHeader = req.headers['authorization'];
+  // const token = authHeader?.split(' ')[1];
+  // if (!token) return res.sendStatus(401);
+  // jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    // if (err) return res.sendStatus(403);
     // req.user = user;
-    next();
-  });
-}
+    // next();
+  // });
+// }
 
 // creating user
 router.post("/signup", async (req, res) => {
@@ -39,13 +38,13 @@ router.post("/signup", async (req, res) => {
 
 //login user
 router.post("/login", async (req, res) => {
-    const { email, password } = req.body;
-    const userLogin = await User.findOne({ email: email });
-    if (!userLogin || !(await bcrypt.compare(password, userLogin.password))) {
-      return res.status(401).json({ message: 'Invalid credentials' });
-    }
-    const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+  const { email, password } = req.body;
+  const userLogin = await User.findOne({ email: email });
+  if (!userLogin || !(await bcrypt.compare(password, userLogin.password))) {
+    return res.status(401).json({ message: 'Invalid credentials' });
+  }
+  const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  res.json({ token });
 
   // const userLogin = await User.find({ email: req.body.email, password: req.body.password });
   // if (!userLogin) {
@@ -60,7 +59,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Protected route
-router.get('/profile', authenticateToken, (req, res) => {
+router.get('/profile', middle, (req, res) => {
   res.json({ message: 'Hello user' });
 });
 
