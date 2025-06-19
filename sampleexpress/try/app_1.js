@@ -11,6 +11,7 @@ app.use(express.json());
 app.use('/course', courseRoutes);
 //app.use('/payment', paymentRoutes);
 app.use('/user', userRoutes);
+
 app.listen(3003,function(){
     console.log("Server is running on port 3003 now");
 })

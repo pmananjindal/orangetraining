@@ -5,7 +5,7 @@ const connectdb = require("./db.js");
 const db = connectdb();
 
 // import the user routes from route module
-const usersRouter = require("./userRoutes");
+const usersRouter = require("./routes/userRoutes.js");
 
 //use the user routes
 app.use("/users", usersRouter);
