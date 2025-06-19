@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const pinologger = require('../Middleware/pinoMiddleware');
+const pinologger = require('./pinoMiddleware');
 
 // Middleware to protect routes
 function authenticateToken(req, res, next) {

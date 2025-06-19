@@ -1,7 +1,7 @@
 const express = require('express')
-const dateMiddleware = require('./Middleware/requestdatemiddleware');
+const dateMiddleware = require('./middleware/requestdatemiddleware');
 const morgan = require('morgan');
-const pinologger = require('./Middleware/pinoMiddleware');
+const pinologger = require('./middleware/pinoMiddleware');
 const path = require('path')
 
 const app = express()

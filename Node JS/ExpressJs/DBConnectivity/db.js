@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const pinologger = require('../Middleware/pinoMiddleware');
+const pinologger = require('../middleware/pinoMiddleware');
 
 async function connectDb()
 {

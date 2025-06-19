@@ -1,7 +1,7 @@
 const express = require("express");
-const Course = require("../Schemas/CourseSchema");
+const Course = require("../schemas/CourseSchema");
 const router = express.Router();
-const pinologger = require('../Middleware/pinoMiddleware');
+const pinologger = require('../middleware/pinoMiddleware');
 
 
 router.get("/", async (req, res) => {
