@@ -1,7 +1,7 @@
 
 const mongoDb = require("../node-test/dbConnection/mongoDb")
 require('dotenv').config();
-mongoDb();
+//mongoDb();
 
 const express = require("express");
 const app = express();
