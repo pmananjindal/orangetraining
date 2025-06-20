@@ -12,6 +12,7 @@ const app = express();
 const userRoutes = require("./routes/userRoutes"); // Import user routes
 app.use(express.json()); // Middleware to parse JSON bodies
 app.get("/", (req, res) => {
+    //   res.send("Hello, World!!");
     res.json({ message: 'Hello, world!' });
 });
 app.use("/users", userRoutes); // Use user routes
