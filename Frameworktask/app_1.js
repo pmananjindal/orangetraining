@@ -1,6 +1,5 @@
 const connectDB = require('./db');
 connectDB();
-
 //const Course = require('./courseSchema.js');
 //const Payment = require('./paymentSchema.js');
 const userRoutes = require('./userRoutes.js');
