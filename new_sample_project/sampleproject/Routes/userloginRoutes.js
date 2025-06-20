@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const authenticateToken = require('../authmiddleware');
+const pinologger = require('../pinoMiddleware');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
-const userdetails = require("../Models/userloginSchema");
+const userdetails = require("../models/userloginSchema");
 
 router.post("/userdetails", async (req, res) => {
     console.log(req.body);
@@ -34,8 +36,9 @@ router.post("/login", async(req, res) => {
   const token = jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: '1h' });
   res.json({ token });
 });
-router.post("/logout", (req, res) => {
-  res.send("Logged out Succusfully");
+router.post("/logout",authenticateToken, async (req, res) => {
+  // logout
+    res.send("user logout");
 });
 
 router.get('/profile', authenticateToken, (req, res) => {
@@ -43,18 +46,18 @@ router.get('/profile', authenticateToken, (req, res) => {
 });
 
 // Middleware to protect routes
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader?.split(' ')[1];
+// function authenticateToken(req, res, next) {
+//   const authHeader = req.headers['authorization'];
+//   const token = authHeader?.split(' ')[1];
  
-  if (!token) return res.sendStatus(401);
+//   if (!token) return res.sendStatus(401);
  
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403);
-    //req.user = user;
-    next();
-  });
-}
+//   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+//     if (err) return res.sendStatus(403);
+//     //req.user = user;
+//     next();
+//   });
+// }
 
 
  module.exports = router;

@@ -87,15 +87,17 @@
 // console.log("Server is running on port 3000 now");
 // })
 
-
+const dateMiddleware = require('./middleware/requestdatemiddleware');
+const morgan = require('morgan');
+const pinologger = require('./middleware/pinoMiddleware');
 const connectDB = require('./db');
 connectDB();
-const Course = require('./Models/courseschema.js');
-const Payment = require('./Models/paymentschema.js');
-const Userlogin = require('./Models/userloginSchema.js');
-const courseRoutes = require('./Routes/courseRoutes.js');
-const paymentRoutes = require('./Routes/paymentRoutes.js');
-const userloginRoutes = require('./Routes/userloginRoutes.js');
+const Course = require('./models/courseschema.js');
+const Payment = require('./models/paymentschema.js');
+const Userlogin = require('./models/userloginSchema.js');
+const courseRoutes = require('./routes/courseRoutes.js');
+const paymentRoutes = require('./routes/paymentRoutes.js');
+const userloginRoutes = require('./routes/userloginRoutes.js');
 const express = require('express')
 const app = express()
 app.use(express.json());
