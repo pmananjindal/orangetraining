@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require("express");
-const User = require("../schemas/userSchema");
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const authenticateToken = require('../middleware/authenticateTokenMiddleware');
 const bcrypt = require('bcrypt');
+const authenticateToken = require('../middleware/authenticateTokenMiddleware');
 const pinologger = require('../middleware/pinoMiddleware');
+const User = require("../schemas/userSchema");
 
 router.post("/signup", async (req, res) => {
   // Create a new user
@@ -29,10 +30,11 @@ router.post("/login", async (req, res) => {
           const {email, password} = req.body;
           const user = await User.findOne({email : email});
           const result = await bcrypt.compare(password, user.password)
-
+          
           if (!user || !result) {
             return res.status(404).send({ error: 'Invalid Credentials.' });
           }
+
           const token = jwt.sign({user}, process.env.JWT_SECRET, {expiresIn:'1h'})
           res.json({token});
           } 

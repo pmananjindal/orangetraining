@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const pinologger = require('../middleware/pinoMiddleware');
-require('dotenv').config();
+// require('dotenv').config();
 
 async function connectDb()
 {

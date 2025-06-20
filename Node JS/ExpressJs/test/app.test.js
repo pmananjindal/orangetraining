@@ -5,8 +5,6 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 const app = require('../index');
 const Course = require("../schemas/CourseSchema");
 const User = require("../schemas/userSchema");
-const bcrypt = require('bcrypt');
-
 let mongoServer;
 
 describe.skip('Course API (MongoDB)', () => {
@@ -108,13 +106,12 @@ describe('Users API (MongoDB)', () => {
 
       it('should login a user', async () => {
           const newUser = {
-                  "email":"demo1@test.com",
+                  "email":"demo5@test.com",
                   "password":"12345678"
                 };
 
           const user = await request(app).post('/users/signup').send(newUser);
           const res = await request(app).post('/users/login').send(newUser);
-          // console.log(res.body);
           // expect(res.status).to.equal(201);
           //  expect(res.body).to.include(newCourse);
           expect(res.body).to.have.property('token');
