@@ -103,32 +103,24 @@ describe('Users API (MongoDB)', () => {
                   };
             
             const res = await request(app).post('/users/signup').send(newUser);
-            console.log(res);
             expect(res.status).to.equal(201);
-            //  expect(res.body).to.include(newCourse);
-            // expect(res.body).to.have.property('token');
-            // expect(res.body).to.have.property('name', userPayload.name);
-        });
+      });
 
-        it('should login a user', async () => {
-            const newUser = {
-                    "email":"demo1@test.com",
-                    "password":"12345678"
-                  };
+      it('should login a user', async () => {
+          const newUser = {
+                  "email":"demo1@test.com",
+                  "password":"12345678"
+                };
 
-            const user = await request(app).post('/users/signup').send(newUser);
-            
-            const res = await request(app).post('/users/login').send(newUser);
-            console.log(res.body);
-            // expect(res.status).to.equal(201);
-            //  expect(res.body).to.include(newCourse);
-            expect(res.body).to.have.property('token');
-            // expect(res.body).to.have.property('name', userPayload.name);
-        });
+          const user = await request(app).post('/users/signup').send(newUser);
+          const res = await request(app).post('/users/login').send(newUser);
+          // console.log(res.body);
+          // expect(res.status).to.equal(201);
+          //  expect(res.body).to.include(newCourse);
+          expect(res.body).to.have.property('token');
+          // expect(res.body).to.have.property('name', userPayload.name);
+      });
 
-       
-
-       
     });
 
 });
