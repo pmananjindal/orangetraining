@@ -6,8 +6,8 @@ const connectDB = require('./db.js');
 connectDB();
 //const Course = require('./schema.js');
 
-const userRouter = require("../routes/userRoutes.js");
-// const paymentRouter = require("../routes/paymentRoutes");
+const userRouter = require("./userRoutes.js");
+// const paymentRouter = require("./paymentRoutes");
 
 app.use("/users", userRouter);
 // app.use("/payment", paymentRouter);

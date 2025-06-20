@@ -2,8 +2,8 @@ const express = require('express')
 // const morgan = require('morgan')
 const app = express()
 const port = 3000
-// const requestDate = require('../middleware/datemiddleware.js');
-// const logger = require('../middleware/pinomiddleware.js');
+// const requestDate = require('./datemiddleware.js');
+// const logger = require('./pinomiddleware.js');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/hi', (req, res) => {
