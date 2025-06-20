@@ -16,7 +16,7 @@ router.post("/signup", async (req, res) => {
         password: hashedPassword
     });
     newUser.save().then((result) => {
-        res.send(result);
+        res.status(201).send(result);
     }).catch((err) => {
         pinologger.error(err);
         res.status(500).send({ error: 'Failed to SignUp User.' });
