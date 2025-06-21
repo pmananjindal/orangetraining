@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/userModel');
+const User = require('./userModel.js');
+
+
+// const bcrypt = require('bcryptjs');
+// const jwt = require('jsonwebtoken');
+//require('dotenv').config();
+
 // router.post("/", (req, res) => {
 //     const { name, email } = req.body;
 //     if (!name || !email) {
@@ -28,5 +34,25 @@ router.post('/', async (req, res) => {
       }
     }
   });
+
+
+
+  router.get('/hello', (req, res) => {
+   res.send({ message: 'Hello, world!' });
+}
+);
+router.get('/bye',   (req, res) =>{
+    res.send({ message: 'Bye, world!!!' });
+});
+
+ router.get("/", async (req, res) => {
+     try {
+        const users = await User.find({});
+        res.status(200).send(users);
+      } catch (err) {
+        console.error('Error fetching courses:', err);
+        res.status(500).send({ error: 'Failed to fetch users' });
+      }
+ });
 module.exports = router;
  

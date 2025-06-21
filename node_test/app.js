@@ -33,10 +33,12 @@
 const express = require("express");
 const app = express();
 //const userRoutes = require("./routes/userRoutes"); // Import user routes
-const userRoutes = require("./routes/userroutes");
+const userRoutes = require("./userRoutes.js");
 app.use(express.json()); // Middleware to parse JSON bodies
-app.get("/", (req, res) => {
-    res.json({ message: 'Hello, world!' });
-});
+// app.get("/", (req, res) => {
+//     res.json({ message: 'Hello, world!' });
+// });
 app.use("/users", userRoutes); // Use user routes
+// app.use("/hello", userRoutes); // Use user routes
+// app.use("/bye", userRoutes); // Use user routes
 module.exports = app;
