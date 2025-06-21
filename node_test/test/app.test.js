@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const mongoose = require('mongoose');
 const { MongoMemoryServer} = require('mongodb-memory-server');
 const app = require('../app');
-const User = require('../userModel');
+const User = require('../models/userModel');
 let mongoServer;
 
 describe('User API (MongoDB)', () => {
