@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Payment = require("./paymentSchema");
+const Payment = require("../models/paymentSchema");
 router.get("/", async (req, res) => {
     try {
         const payments = await Payment.find({});

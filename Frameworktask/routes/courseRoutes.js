@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Course = require("./courseSchema");
+const Course = require("../models/courseSchema");
 router.get("/", async (req, res) => {
     try {
         const courses = await Course.find({});

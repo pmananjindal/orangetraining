@@ -1,11 +1,11 @@
 const connectDB = require('./db');
 connectDB();
-//const Course = require('./courseSchema.js');
-//const Payment = require('./paymentSchema.js');
-const userRoutes = require('./userRoutes.js');
+//const Course = require('./routes/courseSchema.js');
+//const Payment = require('./routes/paymentSchema.js');
+const userRoutes = require('./routes/userRoutes.js');
 
-const courseRoutes = require('./courseRoutes.js');
-//const paymentRoutes = require('./paymentRoutes.js');
+const courseRoutes = require('./routes/courseRoutes.js');
+//const paymentRoutes = require('./routes/paymentRoutes.js');
 
 
 const express = require('express')

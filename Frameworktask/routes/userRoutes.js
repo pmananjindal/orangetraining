@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
 const router = express.Router();
-const User = require("./userSchema");
-const middle = require('./middleware');
+const User = require("../models/userSchema");
+const middle = require('../middleware/middleware');
 
 // Middleware to protect routes
 // function authenticateToken(req, res, next) {
