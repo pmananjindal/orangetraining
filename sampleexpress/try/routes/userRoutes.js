@@ -1,6 +1,8 @@
 const express = require ("express");
+const bcrypt = require ("bcryptjs");
 const router  = express.Router();
 const jwt = require('jsonwebtoken');
+const user = require('../models/userSchema');
 require('dotenv').config();
 //const authenticateToken = require ("authenticateToken");
 // Middleware to protect routes
@@ -16,8 +18,16 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
-router.post("/signup", (req, res) => {
+router.post("/signup",async (req, res) => {
     console.log(req.body);
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    console.log(hashedPassword);
+    //Insert the data into DB using schema
+    /*let newUser = new user({
+        email: req.body.email,
+        password: hashedPassword 
+    })*/
+    const newUser = await user.create({ email:req.body.email, password: hashedPassword});
     res.send("User is successfully signed up!");
     
 });

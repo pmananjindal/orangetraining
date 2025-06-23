@@ -2,7 +2,7 @@ const mongoos = require('mongoose');
 
 async function connectDB(){
     try{
-        await mongoos.connect('mongodb+srv://awateanjali123:awateanjali123%40@devdata.seo6qea.mongodb.net/?retryWrites=true&w=majority&appName=devdata'
+        await mongoos.connect('mongodb+srv://anjali_awate:anjali_awate@devdata.seo6qea.mongodb.net/'
  ,
             {
                 useNewUrlParser:true,
