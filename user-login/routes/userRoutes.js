@@ -18,22 +18,46 @@ function authenticateToken(req, res, next) {
 }
 
 // creating user
-router.post("/signup", async (req, res) => {
-    console.log(req.body);
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    console.log(hashedPassword);
-    // Insert the data into DB using Schema
-    let newUser = new User({
-        email: req.body.email,
-        // password: hashedPassword,
-        password: req.body.password
-    });
-    newUser.save().then((result) => {
-        res.send(result);
-    }).catch((err) => {
-        console.error('Error fetching user:', err);
-        res.status(500).send({ error: 'Signup failed...' });
-    });
+// router.post("/signup", async (req, res) => {
+//     console.log(req.body);
+//     const hashedPassword = await bcrypt.hash(req.body.password, 10);
+//     console.log(hashedPassword);
+//     // Insert the data into DB using Schema
+//     let newUser = new User({
+//         email: req.body.email,
+//         // password: hashedPassword,
+//         password: req.body.password
+//     });
+//     newUser.save().then((result) => {
+//         res.send(result);
+//     }).catch((err) => {
+//         // console.error('Error fetching user:', err);
+//         // res.status(500).send({ error: 'Signup failed...' });
+//         if (err.code === 11000) {
+//             res.status(409).json({ error: 'Email already exists.' });
+//         } else {
+//             res.status(500).json({ error: 'Internal Server Error' });
+//         }
+//     });
+// });
+
+router.post('/', async (req, res) => {
+    const { email, password } = req.body;
+
+    if (!password || !email) {
+        return res.status(400).json({ error: 'email and password are required.' });
+    }
+
+    try {
+        const newUser = await User.create({ email, password });
+        res.status(201).json(newUser);
+    } catch (err) {
+        if (err.code === 11000) {
+            res.status(409).json({ error: 'Email already exists.' });
+        } else {
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }
 });
 
 //login user

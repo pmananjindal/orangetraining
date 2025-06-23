@@ -22,38 +22,47 @@ describe('User API (MongoDB)', () => {
         await User.deleteMany({});
     });
 
-    // describe.skip('GET /getuser', () => {
-    //     it.skip('should return user details', async () => {
-    //         await User.create({email: 'Alice@gmail.com', password: 'Welcome123'});
-    //         await User.create({email: 'Bob@gmail.com', password: 'Welcome123'});
-
-    //         const res = await request(app).get('/getuser');
-    //         expect(res.status).to.equal(200);
-    //         expect(res.body).to.be.an('array');
-    //         // expect(res.body).to.have.property('message', 'Hello, world!');
-    //         expect(res.body.length).to.equal(2);
-    //     });
-    // });
-
-    describe('POST /auth/ signup', () => {
-        it('should create new user', async () => {
-            const userPayload = {
-                email: 'test@gmail.com',
-                password: 'Welcome@2025'
-            };
-            const res = await request(app).post('/auth/signup').send(userPayload);
-            console.log(res.body);
+    describe('GET users', () => {
+        it('should return all users', async () => {
+            await User.create({ email: 'alice@example.com', password: 'Alice123' });
+            await User.create({ email: 'bob@example.com', password: 'Bob123' });
+            const res = await request(app).get('/');
             expect(res.status).to.equal(200);
-            // expect(res.body).to.include(userPayload);
-            // expect(res.body).to.have.property('id');
-            expect(res.body).to.have.property('email', userPayload.email);
-        })
-        // it('it should return 400 if email or password is missing', async() => {
-        //     const res = await request(app).post('/auth/signup').send({email: 'test2206@gmail.com'});
-        //         expect(res.body).to.have.property('error');
-        //     });
         });
-    })
+    });
+
+    describe('POST /auth', () => {
+        it('should create a user with email and password', async () => {
+            const res = await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+            expect(res.status).to.equal(201);
+            expect(res.body).to.include({ email: 'alice@example.com', password: 'Alice123' });
+        });
+
+        it('should return 400 if email or password is missing', async () => {
+            await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+            const res = await request(app).post('/auth').send({ email: 'alice@example.com' });
+            expect(res.status).to.equal(400);
+            expect(res.body).to.have.property('error', 'email and password are required.');
+        });
+
+        it('should return 400 if email or password is missing', async () => {
+            await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+            const res = await request(app).post('/auth').send({ password: 'Alice123' });
+            expect(res.status).to.equal(400);
+            expect(res.body).to.have.property('error', 'email and password are required.');
+        });
+
+        // it('should return 409 if email already exists', async () => {
+        //     await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+        //     const res1 = await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+        //     await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+        //     const res2 = await request(app).post('/auth').send({ email: 'alice@example.com', password: 'Alice123' });
+            
+        //     expect(res.status).to.equal(409);
+        //     expect(res.body).to.have.property('error', 'Email already exists.');
+        // });
+    });
+})
 
 
 

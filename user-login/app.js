@@ -4,7 +4,7 @@ const userRoutes = require("./routes/userRoutes");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.json({ message: 'Hello, world!' });
+    res.json({ message: 'User details recieved' });
 });
 
 app.use("/auth", userRoutes);

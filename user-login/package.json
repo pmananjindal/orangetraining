@@ -18,7 +18,9 @@
     "supertest": "^7.1.1"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2",
     "mongodb-memory-server": "^10.1.4",
     "mongoose": "^8.16.0",
     "rxpress": "^0.3.0"
