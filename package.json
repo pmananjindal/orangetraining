@@ -4,8 +4,9 @@
   "description": "For Orange company",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app1.js"
+    "test": "mocha",
+    //"dev":"nodemon server.js"
+   
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,9 @@
     "mongoose": "^8.16.0"
   },
   "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.7.0",
     "nodemon": "^3.1.10"
   }
 }
+ 
